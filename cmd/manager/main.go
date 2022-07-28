@@ -120,6 +120,8 @@ func main() {
 		log.Error(err, "unable to register webhooks to the manager")
 		os.Exit(1)
 	}
+	log.Info("register validation webhooks6")
+	webhook.RegisterValidatingWebhooks()
 	// Start the Cmd
 	log.Info("Starting the Cmd.")
 	if err := mgr.Start(signals.SetupSignalHandler()); err != nil {

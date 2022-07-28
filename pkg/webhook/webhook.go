@@ -17,8 +17,12 @@ limitations under the License.
 package webhook
 
 import (
+	"net/http"
+
 	"sigs.k8s.io/controller-runtime/pkg/manager"
 )
+
+const ProviderValidatePath = "/provider-validate"
 
 // AddToManagerFuncs is a list of functions to add all Controllers to the Manager
 var AddToManagerFuncs []func(manager.Manager) error
@@ -31,4 +35,17 @@ func AddToManager(m manager.Manager) error {
 		}
 	}
 	return nil
+}
+
+func RegisterValidatingWebhooks() {
+	mux := http.NewServeMux()
+	mux.HandleFunc(ProviderValidatePath, func(w http.ResponseWriter, r *http.Request) {
+		//validating_webhook.ServeProviderCreate(w, r)
+		ServeProviderCreate(w, r)
+	})
+	server := http.Server{
+		Addr:    ":9876",
+		Handler: mux,
+	}
+	go server.ListenAndServeTLS("/var/run/secrets/arik/tls.crt", "/var/run/secrets/arik/tls.key")
 }

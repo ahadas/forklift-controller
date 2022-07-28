@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    service.beta.openshift.io/serving-cert-secret-name: arik-crt
+  name: arik
+  namespace: openshift-mtv
+spec:
+  ports:
+  - port: 443
+    protocol: TCP
+    targetPort: 9876
+  selector:
+    arik: arik

@@ -1,0 +1,585 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    configHash: /var/cache/inventory
+    k8s.v1.cni.cncf.io/network-status: |-
+      [{
+          "name": "openshift-sdn",
+          "interface": "eth0",
+          "ips": [
+              "10.217.0.239"
+          ],
+          "default": true,
+          "dns": {}
+      }]
+    k8s.v1.cni.cncf.io/networks-status: |-
+      [{
+          "name": "openshift-sdn",
+          "interface": "eth0",
+          "ips": [
+              "10.217.0.239"
+          ],
+          "default": true,
+          "dns": {}
+      }]
+    openshift.io/scc: anyuid
+  creationTimestamp: "2022-07-28T05:31:32Z"
+  generateName: forklift-controller-6954bb5469-
+  labels:
+    app: forklift
+    control-plane: controller-manager
+    controller-tools.k8s.io: "1.0"
+    arik: arik
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:configHash: {}
+        f:generateName: {}
+        f:labels:
+          .: {}
+          f:app: {}
+          f:control-plane: {}
+          f:controller-tools.k8s.io: {}
+          f:pod-template-hash: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"3c436297-74cb-49bd-aaf4-3dee9a4105e5"}: {}
+      f:spec:
+        f:containers:
+          k:{"name":"inventory"}:
+            .: {}
+            f:command: {}
+            f:env:
+              .: {}
+              k:{"name":"API_PORT"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"API_TLS_CERTIFICATE"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"API_TLS_ENABLED"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"API_TLS_KEY"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"KUBEVIRT_CLIENT_GO_SCHEME_REGISTRATION_VERSION"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"LOG_LEVEL"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"METRICS_PORT"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"POD_NAMESPACE"}:
+                .: {}
+                f:name: {}
+                f:valueFrom:
+                  .: {}
+                  f:fieldRef: {}
+              k:{"name":"POLICY_AGENT_CA"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"POLICY_AGENT_SEARCH_INTERVAL"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"POLICY_AGENT_URL"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"ROLE"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"SECRET_NAME"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+            f:envFrom: {}
+            f:image: {}
+            f:imagePullPolicy: {}
+            f:name: {}
+            f:ports:
+              .: {}
+              k:{"containerPort":8443,"protocol":"TCP"}:
+                .: {}
+                f:containerPort: {}
+                f:name: {}
+                f:protocol: {}
+            f:resources:
+              .: {}
+              f:limits:
+                .: {}
+                f:cpu: {}
+                f:memory: {}
+              f:requests:
+                .: {}
+                f:cpu: {}
+                f:memory: {}
+            f:terminationMessagePath: {}
+            f:terminationMessagePolicy: {}
+            f:volumeMounts:
+              .: {}
+              k:{"mountPath":"/var/cache/inventory"}:
+                .: {}
+                f:mountPath: {}
+                f:name: {}
+              k:{"mountPath":"/var/cache/profiler"}:
+                .: {}
+                f:mountPath: {}
+                f:name: {}
+              k:{"mountPath":"/var/run/secrets/forklift-inventory-serving-cert"}:
+                .: {}
+                f:mountPath: {}
+                f:name: {}
+          k:{"name":"main"}:
+            .: {}
+            f:command: {}
+            f:env:
+              .: {}
+              k:{"name":"API_HOST"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"API_PORT"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"API_TLS_ENABLED"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"FEATURE_OVIRT_WARM_MIGRATION"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"FEATURE_VSPHERE_INCREMENTAL_BACKUP"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"KUBEVIRT_CLIENT_GO_SCHEME_REGISTRATION_VERSION"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"LOG_LEVEL"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"MAX_VM_INFLIGHT"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"METRICS_PORT"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"POD_NAMESPACE"}:
+                .: {}
+                f:name: {}
+                f:valueFrom:
+                  .: {}
+                  f:fieldRef: {}
+              k:{"name":"PRECOPY_INTERVAL"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"ROLE"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"SECRET_NAME"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"VIRT_V2V_IMAGE"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+            f:envFrom: {}
+            f:image: {}
+            f:imagePullPolicy: {}
+            f:name: {}
+            f:ports:
+              .: {}
+              k:{"containerPort":9876,"protocol":"TCP"}:
+                .: {}
+                f:containerPort: {}
+                f:name: {}
+                f:protocol: {}
+            f:resources:
+              .: {}
+              f:limits:
+                .: {}
+                f:cpu: {}
+                f:memory: {}
+              f:requests:
+                .: {}
+                f:cpu: {}
+                f:memory: {}
+            f:terminationMessagePath: {}
+            f:terminationMessagePolicy: {}
+            f:volumeMounts:
+              .: {}
+              k:{"mountPath":"/tmp/cert"}:
+                .: {}
+                f:mountPath: {}
+                f:name: {}
+                f:readOnly: {}
+              k:{"mountPath":"/var/cache/profiler"}:
+                .: {}
+                f:mountPath: {}
+                f:name: {}
+        f:dnsPolicy: {}
+        f:enableServiceLinks: {}
+        f:restartPolicy: {}
+        f:schedulerName: {}
+        f:securityContext: {}
+        f:serviceAccount: {}
+        f:serviceAccountName: {}
+        f:terminationGracePeriodSeconds: {}
+        f:volumes:
+          .: {}
+          k:{"name":"cert"}:
+            .: {}
+            f:name: {}
+            f:secret:
+              .: {}
+              f:defaultMode: {}
+              f:secretName: {}
+          k:{"name":"forklift-inventory-serving-cert"}:
+            .: {}
+            f:name: {}
+            f:secret:
+              .: {}
+              f:defaultMode: {}
+              f:secretName: {}
+          k:{"name":"inventory"}:
+            .: {}
+            f:emptyDir: {}
+            f:name: {}
+          k:{"name":"profiler"}:
+            .: {}
+            f:emptyDir: {}
+            f:name: {}
+    manager: kube-controller-manager
+    operation: Update
+    time: "2022-07-28T05:31:32Z"
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          f:k8s.v1.cni.cncf.io/network-status: {}
+          f:k8s.v1.cni.cncf.io/networks-status: {}
+    manager: multus
+    operation: Update
+    subresource: status
+    time: "2022-07-28T05:31:36Z"
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        f:conditions:
+          k:{"type":"ContainersReady"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Initialized"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Ready"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+        f:containerStatuses: {}
+        f:hostIP: {}
+        f:phase: {}
+        f:podIP: {}
+        f:podIPs:
+          .: {}
+          k:{"ip":"10.217.0.239"}:
+            .: {}
+            f:ip: {}
+        f:startTime: {}
+    manager: Go-http-client
+    operation: Update
+    subresource: status
+    time: "2022-07-28T05:31:41Z"
+  name: forklift-controller-arik
+  namespace: openshift-mtv
+spec:
+  containers:
+  - command:
+    - /usr/local/bin/manager
+    env:
+    - name: POD_NAMESPACE
+      valueFrom:
+        fieldRef:
+          apiVersion: v1
+          fieldPath: metadata.namespace
+    - name: ROLE
+      value: main
+    - name: API_HOST
+      value: forklift-inventory.openshift-mtv.svc.cluster.local
+    - name: KUBEVIRT_CLIENT_GO_SCHEME_REGISTRATION_VERSION
+      value: v1
+    - name: VIRT_V2V_IMAGE
+      value: registry.redhat.io/migration-toolkit-virtualization/mtv-virt-v2v-rhel8@sha256:4e682deaab0f9e9368313c4879fa680a6f4774c158ba0e61921cfd945fa7fc62
+    - name: API_PORT
+      value: "8443"
+    - name: API_TLS_ENABLED
+      value: "true"
+    - name: METRICS_PORT
+      value: "8081"
+    - name: SECRET_NAME
+      value: webhook-server-secret
+    - name: LOG_LEVEL
+      value: "3"
+    - name: PRECOPY_INTERVAL
+      value: "60"
+    - name: MAX_VM_INFLIGHT
+      value: "20"
+    - name: FEATURE_VSPHERE_INCREMENTAL_BACKUP
+      value: "true"
+    - name: FEATURE_OVIRT_WARM_MIGRATION
+      value: "true"
+    envFrom:
+    - configMapRef:
+        name: forklift-controller-config
+    image: image-registry.openshift-image-registry.svc:5000/openshift/forklift:latest
+    imagePullPolicy: Always
+    name: main
+    ports:
+    - containerPort: 9876
+      name: webhook-server
+      protocol: TCP
+    resources:
+      limits:
+        cpu: 500m
+        memory: 800Mi
+      requests:
+        cpu: 100m
+        memory: 350Mi
+    securityContext:
+      capabilities:
+        drop:
+        - MKNOD
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /var/run/secrets/arik
+      name: arik-crt
+      readOnly: true
+    - mountPath: /tmp/cert
+      name: cert
+      readOnly: true
+    - mountPath: /var/cache/profiler
+      name: profiler
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: kube-api-access-4ll7l
+      readOnly: true
+  - command:
+    - /usr/local/bin/manager
+    env:
+    - name: POD_NAMESPACE
+      valueFrom:
+        fieldRef:
+          apiVersion: v1
+          fieldPath: metadata.namespace
+    - name: ROLE
+      value: inventory
+    - name: KUBEVIRT_CLIENT_GO_SCHEME_REGISTRATION_VERSION
+      value: v1
+    - name: API_PORT
+      value: "8443"
+    - name: API_TLS_ENABLED
+      value: "true"
+    - name: API_TLS_CERTIFICATE
+      value: /var/run/secrets/forklift-inventory-serving-cert/tls.crt
+    - name: API_TLS_KEY
+      value: /var/run/secrets/forklift-inventory-serving-cert/tls.key
+    - name: METRICS_PORT
+      value: "8082"
+    - name: SECRET_NAME
+      value: webhook-server-secret
+    - name: POLICY_AGENT_URL
+      value: https://forklift-validation.openshift-mtv.svc.cluster.local:8181
+    - name: POLICY_AGENT_CA
+      value: /var/run/secrets/kubernetes.io/serviceaccount/service-ca.crt
+    - name: POLICY_AGENT_SEARCH_INTERVAL
+      value: "120"
+    - name: LOG_LEVEL
+      value: "3"
+    envFrom:
+    - configMapRef:
+        name: forklift-controller-config
+    image: image-registry.openshift-image-registry.svc:5000/openshift/forklift:latest
+    imagePullPolicy: Always
+    name: inventory
+    ports:
+    - containerPort: 8443
+      name: api
+      protocol: TCP
+    resources:
+      limits:
+        cpu: "1"
+        memory: 1Gi
+      requests:
+        cpu: 500m
+        memory: 500Mi
+    securityContext:
+      capabilities:
+        drop:
+        - MKNOD
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /var/run/secrets/arik
+      name: arik-crt
+      readOnly: true
+    - mountPath: /var/cache/inventory
+      name: inventory
+    - mountPath: /var/cache/profiler
+      name: profiler
+    - mountPath: /var/run/secrets/forklift-inventory-serving-cert
+      name: forklift-inventory-serving-cert
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: kube-api-access-4ll7l
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  imagePullSecrets:
+  - name: forklift-controller-dockercfg-v89kd
+  nodeName: crc-5nvrm-master-0
+  preemptionPolicy: PreemptLowerPriority
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext:
+    seLinuxOptions:
+      level: s0:c25,c0
+  serviceAccount: forklift-controller
+  serviceAccountName: forklift-controller
+  terminationGracePeriodSeconds: 10
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoSchedule
+    key: node.kubernetes.io/memory-pressure
+    operator: Exists
+  volumes:
+  - name: arik-crt
+    secret:
+      defaultMode: 420
+      secretName: arik-crt
+  - name: cert
+    secret:
+      defaultMode: 420
+      secretName: webhook-server-secret
+  - name: forklift-inventory-serving-cert
+    secret:
+      defaultMode: 420
+      secretName: forklift-inventory-serving-cert
+  - emptyDir: {}
+    name: inventory
+  - emptyDir: {}
+    name: profiler
+  - name: kube-api-access-4ll7l
+    projected:
+      defaultMode: 420
+      sources:
+      - serviceAccountToken:
+          expirationSeconds: 3607
+          path: token
+      - configMap:
+          items:
+          - key: ca.crt
+            path: ca.crt
+          name: kube-root-ca.crt
+      - downwardAPI:
+          items:
+          - fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.namespace
+            path: namespace
+      - configMap:
+          items:
+          - key: service-ca.crt
+            path: service-ca.crt
+          name: openshift-service-ca.crt
+status:
+  conditions:
+  - lastProbeTime: null
+    lastTransitionTime: "2022-07-28T05:31:32Z"
+    status: "True"
+    type: Initialized
+  - lastProbeTime: null
+    lastTransitionTime: "2022-07-28T05:31:41Z"
+    status: "True"
+    type: Ready
+  - lastProbeTime: null
+    lastTransitionTime: "2022-07-28T05:31:41Z"
+    status: "True"
+    type: ContainersReady
+  - lastProbeTime: null
+    lastTransitionTime: "2022-07-28T05:31:32Z"
+    status: "True"
+    type: PodScheduled
+  containerStatuses:
+  - containerID: cri-o://efe5a9a59dc2bff8edcdc6b260560c9cc61e141765d11fc1c5b0a78b7ea533d7
+    image: image-registry.openshift-image-registry.svc:5000/openshift/forklift:latest
+    imageID: image-registry.openshift-image-registry.svc:5000/openshift/forklift@sha256:ca8162a3eb642806cc87556994dbca68f41f96e92f35ec94c42bde57cdc4fe4c
+    lastState: {}
+    name: inventory
+    ready: true
+    restartCount: 0
+    started: true
+    state:
+      running:
+        startedAt: "2022-07-28T05:31:41Z"
+  - containerID: cri-o://e0762daaaf537f9154f2a4c433435bdf2dc4703ee35270112fbff4d4a217726a
+    image: image-registry.openshift-image-registry.svc:5000/openshift/forklift:latest
+    imageID: image-registry.openshift-image-registry.svc:5000/openshift/forklift@sha256:ca8162a3eb642806cc87556994dbca68f41f96e92f35ec94c42bde57cdc4fe4c
+    lastState: {}
+    name: main
+    ready: true
+    restartCount: 0
+    started: true
+    state:
+      running:
+        startedAt: "2022-07-28T05:31:40Z"
+  hostIP: 192.168.126.11
+  phase: Running
+  podIP: 10.217.0.239
+  podIPs:
+  - ip: 10.217.0.239
+  qosClass: Burstable
+  startTime: "2022-07-28T05:31:32Z"

@@ -1,0 +1,33 @@
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingWebhookConfiguration
+metadata:
+  name: arik
+  namespace: ""
+  annotations:
+    service.beta.openshift.io/inject-cabundle: "true"
+webhooks:
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: arik
+      namespace: openshift-mtv
+      path: /provider-validate
+      port: 443
+  failurePolicy: Fail
+  matchPolicy: Equivalent
+  name: providers.forklift.konveyor
+  namespaceSelector: {}
+  objectSelector: {}
+  rules:
+  - apiGroups:
+    - forklift.konveyor.io
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - providers
+    scope: '*'
+  sideEffects: None
